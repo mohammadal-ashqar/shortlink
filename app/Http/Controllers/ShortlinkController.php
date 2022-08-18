@@ -10,7 +10,7 @@ class ShortlinkController extends Controller
 {
     public function index()
     {
-        $shortlinks =Shortlink::paginate(10);
+        $shortlinks =Shortlink::orderByDesc('id')->paginate(10);
         return view('shortlink.index',compact('shortlinks'));
 
     }
